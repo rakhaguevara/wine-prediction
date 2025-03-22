@@ -14,7 +14,7 @@ model = None
 
 def load_model():
     global model
-    model_path = os.path.join("models", "model.pkl")
+    model_path = os.path.join("/home/guevara/gdocProject/models", "model.pkl")
     try:
         model = joblib.load(model_path)
         print(f"Model loaded successfully: {type(model)}")
