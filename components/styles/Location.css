@@ -1,0 +1,175 @@
+/* Map Section Styles */
+.location-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200px;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 80px;
+  background-color: #ffff;
+  color: #cf3030;
+}
+
+.location-info {
+  flex: 1;
+  max-width: 1500px;
+}
+
+.location-info h1 {
+  font-size: 4.5rem;
+  font-weight: bold;
+  margin-bottom: 25px;
+  line-height: 1.1;
+}
+
+.location-info p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+.map-container {
+  flex: 1;
+  height: 450px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.map-info {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: white;
+  color: #333;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 999; /* Must be higher than leaflet's z-index */
+  max-width: 250px;
+}
+
+.map-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.map-info p {
+  font-size: 0.85rem;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.map-info a {
+  display: block;
+  font-size: 0.9rem;
+  color: #3e8ef7;
+  text-decoration: none;
+}
+
+.map-info a:hover {
+  text-decoration: underline;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+/* Tablet Media Query (768px - 992px) */
+@media (max-width: 992px) {
+  .location-section {
+    flex-direction: column-reverse; /* Reverse the order - map on top, text below */
+    padding: 40px 30px;
+    gap: 30px;
+  }
+
+  .location-info,
+  .map-container {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .map-container {
+    height: 400px; /* Slightly reduced height for tablet */
+  }
+
+  .location-info h1 {
+    font-size: 3.5rem;
+    text-align: center;
+  }
+
+  .location-info p {
+    text-align: center;
+    font-size: 1.1rem;
+  }
+}
+
+/* Mobile Phone Media Query (up to 767px) */
+@media (max-width: 767px) {
+  .location-section {
+    padding: 70px 20px; /* Memberikan ruang lebih luas */
+    gap: 60px; /* Lebih banyak jarak antar elemen */
+  }
+
+  .map-container {
+    height: 300px; /* Smaller height for mobile */
+  }
+
+  .location-info h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+
+  .location-info p {
+    font-size: 1rem;
+  }
+
+  .map-info {
+    padding: 10px 15px;
+    top: 15px;
+    left: 15px;
+    max-width: 200px;
+  }
+
+  .map-info h3 {
+    font-size: 1rem;
+  }
+
+  .map-info p {
+    font-size: 0.8rem;
+  }
+}
+
+/* Ensure map container and map element always have height */
+.map-container,
+#map {
+  height: 300px !important; /* Use !important to override other styles */
+  width: 100% !important;
+  display: block !important;
+}
+
+@media (max-width: 480px) {
+  .location-section {
+    padding: 70px 20px; /* Memberikan ruang lebih luas */
+    gap: 60px; /* Lebih banyak jarak antar elemen */
+  }
+  .map-info a {
+    display: none;
+  }
+  .location-info {
+    margin-bottom: 50px;
+  }
+
+  .map-container {
+    margin-top: 30px;
+  }
+  .map-container,
+  #map {
+    height: 250px !important;
+  }
+}
